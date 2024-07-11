@@ -19,8 +19,8 @@ pipeline {
 
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
-    stage("print params"){
-        steps {
+       stage("print params"){
+           steps{
                 echo "Hello ${params.PERSON}"
 
                 echo "Biography: ${params.BIOGRAPHY}"
@@ -31,9 +31,9 @@ pipeline {
 
                 echo "Password: ${params.PASSWORD}"
             }
-    }    
+       }
     stages {
-        stage('Example') {
+        stage('Example'){
             steps {
                 echo 'Hello World'
                 echo 'devops'
