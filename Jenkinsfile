@@ -20,7 +20,16 @@ pipeline {
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
        
-           steps{
+          
+       }
+    stages {
+        stage('Example'){
+            steps {
+                echo 'Hello World'
+                echo 'devops'
+            }
+     stage("print params"){
+            steps{
                 echo "Hello ${params.PERSON}"
 
                 echo "Biography: ${params.BIOGRAPHY}"
@@ -30,13 +39,7 @@ pipeline {
                 echo "Choice: ${params.CHOICE}"
 
                 echo "Password: ${params.PASSWORD}"
-            }
-       }
-    stages {
-        stage('Example'){
-            steps {
-                echo 'Hello World'
-                echo 'devops'
+                echo "triggered test"
             }
         }
     }
